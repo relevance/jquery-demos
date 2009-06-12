@@ -1,0 +1,26 @@
+<h1>Selectors Demo</h1>
+
+<div id="section-1">
+  <p class="vivid leader">Paragraph 1</p>
+  <p>Paragraph 2</p>
+  <p>Paragraph 3 has a <span>nested span</span></p>
+  <p class="vivid">Paragraph 4</p>
+  <p>Paragraph 5</p>
+  <div>This is not a paragraph</div>
+</div>
+
+<form id="highlight">
+  <label for="selector">Selector:</label>
+  <input type="text" name="selector" id ="selector"/>
+  <input type="submit" value="Highlight it!"/>
+</form>
+
+<script type="text/javascript">
+    $(function() {
+        $("#highlight").submit(function() {
+            $("*").css("color", null);
+            $($("#selector").val()).css("color", "blue");
+            return false;
+        });
+    });
+</script>
