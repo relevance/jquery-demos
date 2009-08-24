@@ -1,0 +1,11 @@
+#!/bin/bash
+FTPLOG='/tmp/ftplog'
+date >> $FTPLOG
+
+ftp -n $NFJS_FTP <<_FTP>>$FTPLOG
+prompt
+quote USER $NFJS_USER
+quote PASS $NFJS_PASSWORD
+bin
+mput *.pdf
+quit

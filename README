@@ -1,14 +1,7 @@
-jQuery is a powerful JavaScript library for dealing with HTML, events, animations, and Ajax. Unlike many libraries, jQuery puts the browser object model front-and-center through its ubiquitous wrapped element sets. In this talk, you will learn to progressively enhance your web applications the jQuery way: with unobtrusive, functional JavaScript.
+jQuery slides and demos
+See http://blog.thinkrelevance.com/talks for a complete list of talks.
 
-<p>
-In this talk, you will learn how to:
-</p>
-<ul>
-  <li>select and modify elements with jQuery's powerful selectors</li>
-  <li>use jQuery's utility functions</li>
-  <li>register event handlers, including dynamic ones that track changes to the page over time</li>
-  <li>play nice with other libraries with <code>noConflict</code></li>
-  <li>create Ajax requests that return HTML, JSON, and other data types</li>
-  <li>breathe life into your interface with effects and animations</li>
-  <li>unit test your JavaScript code with Screw.Unit, Smoke, and blue-ridge</li>
-</ul>
+This work is licensed under the Creative Commons
+Attribution-Noncommercial-Share Alike 3.0 License.
+
+http://creativecommons.org/licenses/by-nc-sa/3.0/
