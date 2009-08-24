@@ -21,7 +21,7 @@
 <script type="text/javascript">
 function formatObject(result) {
     var formatted = "";
-    $.each(result, function(name, val) {
+    jQuery.each(result, function(name, val) {
         formatted = formatted + name + ": " + val + "\n   ";
     })
     return formatted;
@@ -31,13 +31,23 @@ function formatArray(result) {
     return "[" + result + "]";
 }
 
+function formatFunction(result) {
+    return String(result).match(/(function[^{]+)/)[0] + "{ ... }";
+}
+
 function formatResult(result) {
-    if ($.isArray(result)) {
+    if (result == null) {
+        return null;
+    }
+    if (jQuery.isFunction(result)) {
+        return formatFunction(result);
+    }
+    if (jQuery.isArray(result)) {
         return formatArray(result);
     }
     if (typeof(result) == "object") {
         return formatObject(result);
-    } 
+    }
     return result;   
 }
 
@@ -46,27 +56,27 @@ function errorHandler(fn) {
         try {
             fn();
         } catch (err) {
-            $("#output").text("=> " + err.message);
+            jQuery("#output").text("=> " + err.message);
         }
     }
 }
 
 function evalCode() {
-    return eval("(" + $("#code").val() + ")");
+    return eval("(" + jQuery("#code").val() + ")");
 }
 
-$(function() {
-    $("#code").val("");
-    $("#sandbox").submit(function() {
+jQuery(function() {
+    jQuery("#code").val("");
+    jQuery("#sandbox").submit(function() {
         return false;
     });
-    $("#formatted").click(errorHandler(function() {
-        $("#input").text($("#code").val());
-        $("#output").text("=> " + formatResult(evalCode()));
+    jQuery("#formatted").click(errorHandler(function() {
+        jQuery("#input").text(jQuery("#code").val());
+        jQuery("#output").text("=> " + formatResult(evalCode()));
     }));
-    $("#unformatted").click(errorHandler(function() {
-        $("#input").text($("#code").val());
-        $("#output").text("=> " + evalCode());
+    jQuery("#unformatted").click(errorHandler(function() {
+        jQuery("#input").text(jQuery("#code").val());
+        jQuery("#output").text("=> " + evalCode());
     }));
 });
 </script>
