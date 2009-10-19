@@ -1,3 +1,9 @@
-#!/usr/bin/env ruby
-require File.dirname(__FILE__) + '/../config/boot'
-require 'commands/console'
+#!/bin/sh
+CLASSPATH=src:templates:test:config
+
+for f in lib/*.jar; do
+    CLASSPATH=$CLASSPATH:$f
+done
+
+export LIKESTREAM_ENV=development
+java -cp $CLASSPATH jline.ConsoleRunner clojure.main -i src/repl.clj -r
