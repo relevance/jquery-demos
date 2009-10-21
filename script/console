@@ -5,5 +5,4 @@ for f in lib/*.jar; do
     CLASSPATH=$CLASSPATH:$f
 done
 
-export LIKESTREAM_ENV=development
 java -cp $CLASSPATH jline.ConsoleRunner clojure.main -i src/repl.clj -r

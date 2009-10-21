@@ -1,5 +1,4 @@
 #!/bin/sh
-export LIKESTREAM_ENV=development
 CLASSPATH=src:templates:config
 
 for f in lib/*.jar; do
