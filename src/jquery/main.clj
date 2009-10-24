@@ -1,8 +1,21 @@
-(ns demos.jquery.main
+(ns jquery.main
   (:use compojure
         util.string-template
         [clojure.contrib java-utils str-utils]
-        clojure.contrib.json.write))
+        clojure.contrib.logging
+        clojure.contrib.json.write)
+  (:require [jquery.labs.comments :as comments]))
+
+(defn log-request [request]
+  (log :info (str
+              (-> (:request-method request) name .toUpperCase) " "
+              (:uri request)
+              "\n\tParameters "
+              (:params request)
+              "\n\tPartial Headers "
+              (-> request :headers (dissoc "cookie"))
+              "\n\tSession "
+              (:session request))))
 
 (defn files [dir]
   (map #(.getName %) (-> dir as-file file-seq)))
@@ -22,15 +35,22 @@
                                     (fn [t]
                                       {:link (str "/demos/" t), :name t})
                                     (demo-templates))}))
-(defroutes demo-server
+
+(defroutes server
   (GET "/"
        (index params))
-  
   (GET "/*"
        (or (serve-file (params :*))
            :next))
+  (ANY "/*"
+       (log-request request)
+       :next)
+  (GET "/labs/comments"
+       (comments/get request))
+  (POST "/labs/comments"
+       (comments/post request))
   (GET "/demos/*"
        (or (demo (params :*))
            :next))
-  (ANY "*" (page-not-found)))
-
+  (ANY "*" (page-not-found))
+)
