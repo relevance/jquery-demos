@@ -1,7 +1,7 @@
 $(function() {
   $("#highlight").submit(function() {
-    $("*").css("color", null);
-    $($("#selector").val()).css("color", "blue");
+    $("*").removeClass("highlight");
+    $($("#selector").val()).addClass("highlight");
     return false;
   });
 });
