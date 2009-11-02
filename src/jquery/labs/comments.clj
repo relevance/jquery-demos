@@ -10,8 +10,6 @@
   "List of comments")
 
 (defn ajax? [request]
-  (println "@@@@@@" (-> request :headers))
-  (println "****** " (-> request :headers (clojure.core/get "x-requested-with")))
   (= (-> request :headers (clojure.core/get "x-requested-with")) "XMLHttpRequest"))
 
 (defn get [request]

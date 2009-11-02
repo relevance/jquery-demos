@@ -1,6 +1,4 @@
-<script src="/javascripts/labs/comments.js" type="text/javascript"/></script>
-
-<h2>Comment Form</h2>
+<h2>Instructions</h2>
 
 <p>Your mission in this exercise is to simplify the addition of comments using Ajax. If you add a comment using the form below, you will see that the UI already works--but with a full page refresh. You can make it better. Open the file public/javascripts/labs/comments.js and make the following changes:</p>
 
