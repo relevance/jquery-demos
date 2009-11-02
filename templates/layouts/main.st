@@ -10,7 +10,7 @@
     <link href="/stylesheets/screen.css" media="screen" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    $(demo)()$
+    $(content)()$
   </body>
 </html>
 

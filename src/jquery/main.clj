@@ -20,21 +20,29 @@
 (defn files [dir]
   (map #(.getName %) (-> dir as-file file-seq)))
 
-(defn demo-templates []
+(defn demos []
   (->> (files "templates/demos")
        (filter #(re-find #".st$" %))
        (map #(re-sub #"\.st" "" %))))
 
+(defn labs []
+  ["comments"])
+
 (defn demo [demo]
   (when (-> (str "templates/demos/" demo ".st") as-file .exists)
-    (render-template "demo-layout" {:demo (str "demos/" demo)})))
+    (render-template "layouts/main" {:content (str "demos/" demo)})))
+
+(defn links [group names]
+  (map (fn [n]
+         {:link (str "/" group "/" n)
+          :name n})
+       names))
 
 (defn index [params]
   (render-template "index" {:params (json-str params)
-                            :demos (map
-                                    (fn [t]
-                                      {:link (str "/demos/" t), :name t})
-                                    (demo-templates))}))
+                            :demos (links "demos" (demos))
+                            :labs (links "labs" (labs))
+                            :solutions (links "solutions" (labs))}))
 
 (defroutes server
   (GET "/"
@@ -47,8 +55,12 @@
        :next)
   (GET "/labs/comments"
        (comments/get request))
+  (GET "/solutions/comments"
+       (comments/get request))
   (POST "/labs/comments"
-       (comments/post request))
+        (comments/post request))
+  (POST "/solutions/comments"
+        (comments/post request))
   (GET "/demos/*"
        (or (demo (params :*))
            :next))
