@@ -1,0 +1,20 @@
+You will need Java 5 or greater installed to run the web server for the labs.
+
+To run the web server from the command line:
+
+  script/server (Unix)
+  script/server.bat (Windows)
+  
+To connect to the server, browse to 
+
+  http://localhost:8080
+  
+The JavaScript files you need to change are in
+
+  public/javascripts/labs/*
+  
+Solutions are in 
+  
+  public/javascripts/solutions/*
+  
+        

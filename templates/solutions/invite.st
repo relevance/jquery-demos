@@ -22,12 +22,25 @@
 
 <div style="float:right">
 
-<p>The form on the left is a simple "send an invite" message that might appear in a social networking application. Make it better as follows:</p>
+<h3>Solution</h3>
+
+<p>The form on the left is a simple "send an invite" message that might appear in a social networking application. It has been improved using jQuery:</p>
 
 <ol>
-<li>Bind the "add another" button to add another address line in the recipients section.</li>
-<li>Bind the form submission to disable the form, to prevent users from accidentally submitting the form twice.</li>
-<li>Invite messages cannot be blank. Do not enable the form until there is an invite message.</li>
+<li>The "add another" button adds another address line in the recipients section.</li>
+<li>Form submission disables the form, to prevent users from accidentally submitting the form twice.</li>
+<li>The form does not enable until there is an invite message.</li>
 </ol>
 
+<h3>Questions</h3>
+
+<ul>
+<li>Is the form usable without JavaScript?</li>
+<li>Assuming recipients should be email addresses, how would you validate them?</li>
+<li>How would you add a "remove recipient" feature?</li>
+</ul>
+
+<a href="/labs/invite">Back to lab</a>
+
 </div>
+

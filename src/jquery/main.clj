@@ -66,6 +66,9 @@
        (invite/get request))
   (POST "/labs/invite"
         (invite/post request))
+  (GET "/square"
+      (let [i (Integer/parseInt (params :x))]
+        (str (* i i))))        
   (GET "/solutions/invite*"
        (invite/get request))
   (POST "/solutions/invite"

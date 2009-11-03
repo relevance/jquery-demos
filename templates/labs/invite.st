@@ -32,8 +32,6 @@
 <li>Invite messages cannot be blank. Do not enable the form until there is an invite message.</li>
 </ol>
 
-</div>
-
 <h3>Questions</h3>
 
 <ul>
@@ -41,3 +39,8 @@
 <li>Assuming recipients should be email addresses, how would you validate them?</li>
 <li>How would you add a "remove recipient" feature?</li>
 </ul>
+
+<a href="/solutions/invite">See solution</a>
+
+</div>
+

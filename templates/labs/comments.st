@@ -5,18 +5,22 @@
 <ol>
 <li><p>Hide the comment form on page load.</p></li>
 <li><p>Create an "add comment" link that shows the comment form (and hides itself).</p></li>
-<li><p>Add a "hide" link to the comment form that hides the comment form again (and shows the add comments link.</p></li>
+<li><p>Add a "hide" link to the comment form that hides the comment form again (and shows the "add comments" link).</p></li>
 <li><p>Add a submit handler to the comment form that submits the comment via Ajax.</p></li>
 <li><p>When a comment submit succeeds, add the comment to the list of comments and hide the comment form.</p></li>
 <li><p>Add an animated gif that spins whenever an Ajax request is in progress.</p></li>
 </ol>
 
+<a href="/solutions/comments">See solution</a>
+
+<div>
 <form id="post-comment" method="post">
   <input type="textarea" id="comment" name="comment"/>
   <input type="submit" value="Post Comment"/>
 </form>
+</div>
         
-<h2>Comments</h2>
+<h3>Comments</h3>
 
 <ul id="comments">
 $comments:labs/comment()$

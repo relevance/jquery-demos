@@ -1,5 +1,3 @@
-<h1>Sandbox</h1>
-
 <form id="sandbox">
   <p>
     <label for="code">Code:</label><br/>
@@ -13,7 +11,7 @@
   </p>
 </form>
 
-<pre style="font-size:300%;"><code class="js-shell">
+<pre style="font-size:150%;"><code class="js-shell">
 <span class="input" id="input">&nbsp;</span>
 <span class="output"id="output">&nbsp;</span>
 </code></pre>
